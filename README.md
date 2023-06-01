@@ -12,7 +12,7 @@ Demonstration web app for identifying types of triangles.
 
 ## Description
 
-
+Triangle Tracker uses a form collect the lengths of the sides of a triangle from a user, and then determines if these lengths can form a triangle. If they do, it will determine if the triangle is equilateral, isosceles, or scalene.
 
 View the [Github Page]().
 
