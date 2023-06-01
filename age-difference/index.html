@@ -20,7 +20,7 @@
             <input type="number" name="pets-age" id="pets" min="0" max="90">
         </div>
         <div>
-            <input type="submit" value="Calculate Difference" name="add" id="submit-btn">
+            <button id="submit-btn" type="button">Calculate Difference</button>
         </div>
         <div id="display"></div>
     </form>
@@ -28,15 +28,31 @@
         let humanAgeIpt = document.querySelector('#age');
         let petAgeIpt = document.querySelector('#pets');
         let submitBtn = document.querySelector('#submit-btn');
+        let displayDiv = document.querySelector('#display');
+        let form = document.querySelector("form");
 
-        function calculateDifference(num1, num2) {
-            return num1 - num2;
+        function reset() {
+            displayDiv.innerHTML = "";
         }
+
+        humanAgeIpt.addEventListener('change', reset);
+        petAgeIpt.addEventListener('change', reset);
 
         submitBtn.addEventListener('click', function () {
             let humanAge = humanAgeIpt.value;
             let petAge = petAgeIpt.value;
-            alert(calculateDifference(humanAge, petAge));
+            let difference = "The difference in our ages is ";
+            if (humanAge > petAge) {
+                difference += humanAge - petAge;
+            }
+            else if (humanAge < petAge) {
+                difference += petAge - humanAge;
+            }
+            else {
+                difference += 0;
+            }
+            displayDiv.innerHTML = difference;
+            form.reset();
         })
     </script>
 </body>
