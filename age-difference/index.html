@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>sTUFFF......</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/styles.css"> 
+    <link rel="stylesheet" href="css/styles.css">
     <script src="js/scripts.js"></script>
 </head>
+
 <body>
     <form>
         <div>
@@ -21,7 +23,7 @@
             <input type="submit" value="Calculate Difference" name="add" id="submit-btn">
         </div>
         <div id="display"></div>
-    </form> 
+    </form>
     <script>
         let humanAgeIpt = document.querySelector('#age');
         let petAgeIpt = document.querySelector('#pets');
@@ -31,11 +33,12 @@
             return num1 - num2;
         }
 
-        submitBtn.addEventListener('click', function() {
+        submitBtn.addEventListener('click', function () {
             let humanAge = humanAgeIpt.value;
             let petAge = petAgeIpt.value;
             alert(calculateDifference(humanAge, petAge));
         })
     </script>
 </body>
+
 </html>
