@@ -4,42 +4,39 @@
     <title>sTUFFF......</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&display=swap');
+    </style>
     <link rel="stylesheet" href="css/styles.css"> 
     <script src="js/scripts.js"></script>
 </head>
 <body>
-    <form>
-        <div>
-            <label for=""></label>
-            <input type="number" name="side-length" min="0" 
-        </div>
-        <div>
-            <label for="age">Enter your human's age</label>
-            <input type="number" name="human-age" id="age" min="0" max="90">
-        </div>
-        <div>
-            <label for="pets">Enter you pets age</label>
-            <input type="number" name="pets-age" id="pets" min="0" max="90">
-        </div>
-        <div>
-            <input type="submit" value="Calculate Difference" name="add" id="submit-btn">
-        </div>
-        <div id="display"></div>
-    </form> 
-    <script>
-        let humanAgeIpt = document.querySelector('#age');
-        let petAgeIpt = document.querySelector('#pets');
-        let submitBtn = document.querySelector('#submit-btn');
-
-        function calculateDifference(num1, num2) {
-            return num1 - num2;
-        }
-
-        submitBtn.addEventListener('click', function() {
-            let humanAge = humanAgeIpt.value;
-            let petAge = petAgeIpt.value;
-            alert(calculateDifference(humanAge, petAge));
-        })
-    </script>
+    <main>
+        <h1>Triangle Tracker</h1>
+        <p>Use the form below to determine if the lengths of three sides make a triangle, and if they do, what kind of triangle it would be.</p>
+        <form method="POST">
+            <fieldset>
+                <legend>Side Lengths</legend>
+                <label for="length-a">
+                    Length A:
+                    <input type="number" name="side-length" id="length-a" min="0" placeholder="0" />
+                </label>
+                <label for="length-b">
+                    Length B:
+                    <input type="number" name="side-length" id="length-b" min="0" placeholder="0" />
+                </label>
+                <label for="length-c">
+                    Length C:
+                    <input type="number" name="side-length" id="length-c" min="0" placeholder="0" />
+                </label>
+            </fieldset>
+            <div class="answer"></div>
+            <div class="error"></div>
+            <div class="manage-form">
+                <input type="button" value="Is this a triangle?" id="submit-btn" />
+                <input type="button" value="Reset" id="reset-btn" />
+            </div>
+        </form>
+    </main>
 </body>
 </html>
